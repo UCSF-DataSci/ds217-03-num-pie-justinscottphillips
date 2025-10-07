@@ -59,6 +59,8 @@ You must complete these tasks using command-line tools and save output to files 
 # Expected tools: cut, sort, uniq, wc
 # Output format: Single number (e.g., "10000")
 # Save to: output/part1_patient_count.txt
+
+cut -d',' -f1 health_data.csv | sort | uniq | wc -l > output/part1_patient_count.txt
 ```
 
 **Task 1.2: High Blood Pressure Analysis**
@@ -68,6 +70,8 @@ You must complete these tasks using command-line tools and save output to files 
 # Expected tools: grep or awk, wc
 # Output format: Single number (e.g., "8543")
 # Save to: output/part1_high_bp_count.txt
+
+awk -F',' '$4 > 130' health_data.csv | wc -l > output/part1_high_bp_count.txt
 ```
 
 **Task 1.3: Average Temperature**
@@ -77,6 +81,8 @@ You must complete these tasks using command-line tools and save output to files 
 # Expected tools: cut, awk, tail
 # Output format: Single number with 2 decimal places (e.g., "98.25")
 # Save to: output/part1_avg_temp.txt
+
+cut -d',' -f6 health_data.csv | tail -n +2 | awk '{ sum += $1; n++ } END { printf "%.2f\n", sum/n }' > output/part1_avg_temp.txt
 ```
 
 **Task 1.4: Glucose Statistics**
@@ -86,6 +92,9 @@ You must complete these tasks using command-line tools and save output to files 
 # Expected tools: cut, sort, head
 # Output format: Five numbers, one per line, sorted descending
 # Save to: output/part1_glucose_stats.txt
+
+cut -d',' -f7 health_data.csv | tail -n +2 | sort -nr | head -n 5 > output/part1_glucose_stats.txt
+cut -d',' -f7 health_data.csv | tail -n +2 | sort -nr | uniq | head -n 5 > output/part1_glucose_stats.txt
 ```
 
 **Hints**:

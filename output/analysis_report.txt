@@ -1,0 +1,16 @@
+===========================
+Health Data Analysis Report
+===========================
+
+Dataset Statistics
+   Total Readings: 50000
+
+Average Values
+   Average Heart Rate: 80.1 bpm
+   Average Systolic BP: 125.0 mmHg
+   Average Glucose Level: 99.9 mg/dL
+
+Abnormal Readings
+   High Heart Rate (>90 bpm): 12386
+   High Systolic BP (>130 mmHg): 16180
+   High Glucose Level (>110 mg/dL): 16258

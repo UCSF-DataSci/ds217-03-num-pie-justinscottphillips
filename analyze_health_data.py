@@ -55,7 +55,6 @@ def calculate_statistics(data):
         'avg_systolic_bp': average_systolic_bp,
         'avg_glucose': average_glucose
     }
-    pass
 
 
 def find_abnormal_readings(data):
@@ -91,7 +90,6 @@ def find_abnormal_readings(data):
         'high_blood_pressure': high_bp_count,
         'high_glucose': high_glucose_count
     }
-    pass
 
 
 def generate_report(stats, abnormal, total_readings):
@@ -112,10 +110,10 @@ def generate_report(stats, abnormal, total_readings):
     # Include total_readings, all averages, and all abnormal counts
 
     message = f"===========================\n"
-    message += f"Health Data Analysis Report\n"
+    message += f"Health Sensor Data Analysis Report\n"
     message += f"===========================\n"
 
-    message += f"\nDataset Statistics\n"
+    message += f"\nDataset Summary\n"
     message += f"   Total Readings: {total_readings}\n"
 
     message += f"\nAverage Values\n"
@@ -123,12 +121,11 @@ def generate_report(stats, abnormal, total_readings):
     message += f"   Average Systolic BP: {stats['avg_systolic_bp']:.1f} mmHg\n"
     message += f"   Average Glucose Level: {stats['avg_glucose']:.1f} mg/dL\n"
     
-    message += f"\nAbnormal Readings\n"
+    message += f"\nAbnormal Values\n"
     message += f"   High Heart Rate (>90 bpm): {abnormal['high_heart_rate']}\n"
     message += f"   High Systolic BP (>130 mmHg): {abnormal['high_blood_pressure']}\n"
     message += f"   High Glucose Level (>110 mg/dL): {abnormal['high_glucose']}\n"
     return message
-    pass
 
 
 def save_report(report, filename):
@@ -142,7 +139,7 @@ def save_report(report, filename):
     # Example: with open(filename, 'w') as f:
     #              f.write(report)
 
-    with open("output/analysis_report.txt", "w") as f:  
+    with open(filename, "w") as f:  
         f.write(report)
     pass
 
